@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <!--utf8설정 뷰포트는 모바일을 고려한 설정 -->
+    <title>페이징</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <div style="width: 1200px; height: 26px; margin: 0 auto;">
+            <select name="amount" id="amount"  onchange="create_table(20,20);">
+                <option value="none" selected disabled>=== 선택 ===</option>
+                <option id="five"value="5" selected>5개씩 보기</option>
+                <option id="ten" value="10">10개씩 보기</option>
+                <option id="fifteen" value="15">15개씩 보기</option>
+          
+              </select>
+        </div>
+        <div class="table_area">
+            <hr>
+            <table id="sss">
+                <thead>
+                <tr>
+                    <td>SENDER NAME</td>
+                    <td>RECEIVER NAME</td>
+                    <td>RECEIVER</td>
+                </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+
+           <div>
+            <ul style="list-style: none; text-align: center; ">
+                <li><input type="button" value="1" id="btn1" onclick="create_table(1,1)"></li>
+                <li><input type="button" value="..." class="hidden"id="btn...2" ></li>
+                <li><input type="button" value="2" id="btn2" onclick="create_table(2,2)"></li>
+                <li><input type="button" value="3" id="btn3" onclick="create_table(3,3)"></li>
+                <li><input type="button" value="4" id="btn4" onclick="create_table(4,4)"></li>
+                <li><input type="button" value="5" id="btn5" onclick="create_table(5,5)"></li>
+                <li><input type="button" value="6" id="btn6" onclick="create_table(6,6)"></li>
+                <li><input type="button" value="7" id="btn7" onclick="create_table(7,7)"></li>
+                <li><input type="button" value="8" id="btn8" onclick="create_table(8,8)"></li>
+                <li><input type="button" value="9" id="btn9" onclick="create_table(9,9)"></li>
+                <li><input type="button" value="10" id="btn10" onclick="create_table(10,10)"></li>
+                <li><input type="button" value="11" id="btn11" onclick="create_table(11,11)"></li>
+                <li><input type="button" value="12" id="btn12" onclick="create_table(12,12)" ></li>
+                <li><input type="button" value="13" id="btn13" onclick="create_table(13,13)" ></li>
+                <li><input type="button" value="14" id="btn14" onclick="create_table(14,14)"></li>
+                <li><input type="button" value="..." id="btn..." ></li>
+                <li><input type="button" value="15" id="btn15" onclick="create_table(15,15)" ></li>
+
+            </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+
+
+</body>
