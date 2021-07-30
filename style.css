@@ -1,0 +1,46 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+/*웹폰트를 불러오기 위해 상업 개인용으로 사용가능 noto kr*/
+* {
+    padding: 0;
+    margin: 0;
+    /*브라우저마다 패딩과 마진이 다른데 호환을 하기 위해, 모든 태그가 고유의 패딩과 마진을 가지고 있는데 이걸 모두 0으로 만들어서 디자인 하기 쉽게*/
+    font-family: 'Noto Sans KR', sans-serif;
+    clear: both;
+    /*전구역에 적용*/
+}
+
+.cotent{
+    width: 100%;
+    min-width: 1200px;
+    height: 1200px;
+    margin: 0 auto;
+}
+.table_area{
+    width: 1200px;
+    /* height: 248px; */
+    height: 600px;
+    margin: 0 auto;
+    background-color: aquamarine;
+    text-align: center;
+}
+table { border-collapse:collapse; }  
+tr, td { padding-top: 10px; width: 10%; background-color: bisque; }
+.control{
+    width: 1200px;
+    height: 60px;
+    margin: 0 auto;
+    margin-top: 10px;
+    background-color: brown;
+}
+li{display: inline; width:  10em;}
+#btn1,#btn2,#btn3,#btn4,#btn5,
+#btn6,#btn7,#btn8,#btn9,#btn10,
+#btn11,#btn12,#btn13,#btn14,#btn15{
+    width: 30px;
+}
+.hidden{
+    display: none;
+}
+.show{
+    display: "";
+}
