@@ -2,6 +2,7 @@
 let table = document.getElementById('tbody');
 let table2 = document.getElementById('tbody2');
 var arr = [];
+let e = 1;
 create_table(1, 1);
 
 function create_table(num, buttonck) {
@@ -10,7 +11,6 @@ function create_table(num, buttonck) {
     var selectValue = amountSelect.options[amountSelect.selectedIndex].value;  
 
     for (i = 1; i < 26; i++) {
-
         for (l = 1; l < 4; l++) {
             var row = table.insertRow(table.rows.length); // 하단에 추가
             var cell1 = row.insertCell(0);
@@ -63,6 +63,7 @@ function create_table(num, buttonck) {
 //10개씩 보기 일때
     if(num>19){
        if(selectValue == 10){
+  
         for (k = 1; k < table.rows.length; k++) {
             document.getElementById('row_1' + k).style.display = "none";
             document.getElementById('row_2' + k).style.display = "none";
@@ -73,6 +74,7 @@ function create_table(num, buttonck) {
             document.getElementById('row_2' + k).style.display = "";
             document.getElementById('row_3' + k).style.display = "";
         }
+  
     }
     if(selectValue == 15){
         for (k = 1; k < table.rows.length; k++) {
@@ -89,8 +91,16 @@ function create_table(num, buttonck) {
     
     }
 
+
     // alert(table.rows.length);
+    if(selectValue == 5){
+        for(z=1;z<6;z++){
+            document.getElementById('btn' + z).className = 'show';
+        }
+        document.getElementById('btn...').className = 'show';
+        document.getElementById('btn...2').className = 'hidden';
     if (num > 0 && num<19) {
+
         for (k = 1; k < 5 * (num - 1) + 1; k++) {
             document.getElementById('row_1' + k).style.display = "none";
             document.getElementById('row_2' + k).style.display = "none";
@@ -158,11 +168,17 @@ function create_table(num, buttonck) {
         document.getElementById('btn...2').className = 'hidden';
     }
     document.getElementById('btn15').className = 'show';
-
-
+   
+    }
     
 
     if(selectValue == 10){
+        document.getElementById('btn...').className = 'hidden';
+        document.getElementById('btn...2').className = 'hidden';
+        document.getElementById('btn...3').className = 'show';
+        for(z=1; z<6; z++){
+            document.getElementById('btn' + z).className = 'show';
+        }
         for (k = 1; k < 11 ; k++) {
             document.getElementById('row_1' + k).style.display = "";
             document.getElementById('row_2' + k).style.display = "";
@@ -190,6 +206,11 @@ function create_table(num, buttonck) {
             document.getElementById('row_2' + k).style.display = "none";
             document.getElementById('row_3' + k).style.display = "none";
         }
+        for(k = 76 ; k<81; k++){
+            document.getElementById('row_1' + k).style.display = "none";
+            document.getElementById('row_2' + k).style.display = "none";
+            document.getElementById('row_3' + k).style.display = "none";
+        }
     }
 
     // 버튼 관리 10개씩 볼때
@@ -197,8 +218,8 @@ function create_table(num, buttonck) {
         document.getElementById('btn' + z).className = 'hidden';
         //초기버튼 생성
     }
-  
-    if (buttonck > 3 && buttonck < 14) {
+    document.getElementById('btn8').className = 'show';
+    if (buttonck > 3 && buttonck < 9) {
         for (z = 1; z < 16; z++) {
             document.getElementById('btn' + z).className = 'hidden';
         }
@@ -206,12 +227,18 @@ function create_table(num, buttonck) {
             document.getElementById('btn1').className = 'show';
             document.getElementById('btn' + z).className = 'show';
             document.getElementById('btn...2').className = 'show';
+            if(buttonck == 7 || buttonck == 8){
+                document.getElementById('btn4').className = 'show';
+                document.getElementById('btn5').className = 'show';
+                document.getElementById('btn6').className = 'show';
+            }
         }
-        if(buttonck>12){
-            document.getElementById('btn...').className = 'hidden';
+        
+        if(buttonck>5){
+            document.getElementById('btn...3').className = 'hidden';
         }
-        else if(buttonck<13){
-            document.getElementById('btn...').className = 'show';
+        else if(buttonck<6){
+            document.getElementById('btn...3').className = 'show';
         }
     }  
     if(buttonck<4){
@@ -221,16 +248,6 @@ function create_table(num, buttonck) {
                 document.getElementById('btn' + z).className = 'show';
             }
         }
-    if(buttonck==15 || buttonck==14){
-        for(z=11;z<16;z++){
-            document.getElementById('btn' + z).className = 'show';
-        }
-        for(z=2;z<6;z++){
-            document.getElementById('btn' + z).className = 'hidden';
-        }
-        document.getElementById('btn...2').className = 'show';
-        document.getElementById('btn...').className = 'hidden';
-    }
     if(buttonck==1){
         for(z=1;z<6;z++){
             document.getElementById('btn' + z).className = 'show';
@@ -238,10 +255,14 @@ function create_table(num, buttonck) {
         for(z=6;z<16;z++){
             document.getElementById('btn' + z).className = 'hidden';
         }
-        document.getElementById('btn...').className = 'show';
+        document.getElementById('btn...').className = 'hidden';
         document.getElementById('btn...2').className = 'hidden';
+        document.getElementById('btn...3').className = 'show';
     }
-    document.getElementById('btn15').className = 'show';
+    document.getElementById('btn8').className = 'show';
+        for(z=9; z<16; z++){
+            document.getElementById('btn' + z).className = 'hidden';
+        }
     }
 
 
@@ -274,8 +295,53 @@ function create_table(num, buttonck) {
             document.getElementById('row_3' + k).style.display = "none";
         }
     }
+            for(k=1; k<16; k++){
+                document.getElementById('btn'+k).className = 'hidden'; 
+            }
+            for(k=1; k<6; k++){
+                document.getElementById('btn'+k).className = 'show';
+            }
+            document.getElementById('btn...2').className = 'hidden';
+            document.getElementById('btn...').className = 'hidden';
+            document.getElementById('btn...3').className = 'hidden';
 }
 
+if (document.getElementById('next').onclick = function () {
+    if(selectValue == 5){
+    create_table(buttonck+e,buttonck+e);
+        if(buttonck+e > 15){
+            create_table(15,15);
+            alert('끝 항목입니다.');
+        }
+}
+if(selectValue == 10){
+    if(buttonck ==20 ){
+        buttonck = 1;
+    }
+    create_table(buttonck+e,buttonck+e);
+        if(buttonck+e > 8){
+            create_table(8,8);
+            alert('끝 항목입니다.');
+        }     
+}
+if(selectValue == 15){
+    if(buttonck ==20 ){
+        buttonck = 1;
+    }
+    create_table(buttonck+e,buttonck+e);
+        if(buttonck+e > 5){
+            create_table(5,5);
+            alert('끝 항목입니다.');
+        }
+}
+
+});
+
+if (document.getElementById('prev').onclick = function () {
+
+    create_table(buttonck-e,buttonck-e);
+
+});
 }
 
 
